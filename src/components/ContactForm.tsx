@@ -19,7 +19,8 @@ export default function ContactForm() {
     if (plan) setDefaultPlan(plan);
   }, []);
 
-  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+  // Default to the production form; override per-environment with NEXT_PUBLIC_FORMSPREE_ID.
+  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID || "mdayvqar";
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
